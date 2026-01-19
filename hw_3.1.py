@@ -5,15 +5,15 @@ class Animal:
     view: str
     age: int
     weight: int
-    vaccine: bool
+    is_vaccine: bool
 
 
-    def __init__(self, name: str, view: str, age: int, weight: int, vaccinate: bool):
+    def __init__(self, name: str, view: str, age: int, weight: int, is_vaccinate: bool):
         self.name = name
         self.view = view
         self.age = age
         self.weight = weight
-        self.vaccinate = vaccinate
+        self.is_vaccinate = is_vaccinate
 
 
 animal1 = Animal('Burenka', 'cow', 10, 150, True )
@@ -62,4 +62,59 @@ class Society_member:
 
 # 3 -------------------------------------------------------------------------------------------
 
+class Urban_Fermers_Market:
 
+    def __init__(self):
+        pass
+
+class Fermers_shop:
+    name: str
+    age: int
+    products: list
+
+    def __init__(self, name: str, age: int, products: list):
+        self.name = name
+        self.age = age
+        self.products = products
+
+
+class Product:
+    name: str
+    availability_piece: int
+
+    def __init__(self, name: str, availability_piece: int):
+        self.name = name
+        self.availability_piece = availability_piece
+
+
+class Date_Manufacture_Product:
+    day: int
+    month: int
+    year: int
+
+    def __init__(self, day: int, month: int, year: int):
+        self.day = day
+        self.month = month
+        self.year = year
+
+
+class Buyer:
+    name: str
+    age: int
+    demographic_characteristic: str
+    product_preferences: list
+    cash: float
+
+    def __init__(self, name: str, age: int, demographic_characteristic: str, product_preferences: list, cash: float):
+        self.name = name
+        self.age = age
+        self.demographic_characteristic = demographic_characteristic
+        self.product_preferences = product_preferences
+        self.cash = cash
+
+
+
+""" Класс Городской Фермерский рынок место, где происходит торговля между классом Фермерские Лавки
+и классом Покупатель, в лавках фермеров набор продуктов, которые хранятся в классе Продукты,
+а создаются в классе Дата Производства Продукции.
+"""
