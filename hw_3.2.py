@@ -11,10 +11,10 @@ class Animal:
         self.age = age
 
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f'Имя животного {self.name}, вид животного {self.view}, возраст животного {self.age}'
 
-    def sound_animal(self, sound):
+    def sound_animal(self, sound:str) -> str:
         return f'{sound} издал(-а) звук {self.name}'
 
 cow1 = Animal('корова', 'пятнистая', 4)
@@ -36,11 +36,11 @@ class Book:
         self.number_pages = number_pages
 
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"Название книги {self.name}, автор {self.author}, количество страниц {self.number_pages}. "
 
 
-    def open_pages(self, other):
+    def open_pages(self, other: int) -> str:
 
         if other > self.number_pages: return f"Книга не может быть открыта! Нет столько страниц."
 
@@ -71,26 +71,28 @@ class PassengerPlane:
         self.current_speed = current_speed
 
 
-    def __str__(self):
+    def __str__(self) -> str:
         return (f'Производитель самолёта {self.maker}, модель {self.model}, вместимость пассажиров {self.passenger_capacity}, '
                 f'\nтекущая высота {self.current_height}, текущая скорость {self.current_speed}')
 
 
-    def takeoff(self):
+    def takeoff(self) -> str:
         return f'Самолёт взлетел!'
 
 
-    def landing(self):
+    def landing(self) -> str:
         return f'Самолёт приземлился!'
 
 
     def change_height(self, height:int) -> int:
-        self.current_height = height
+        if height > 0:
+            self.current_height = height
         return self.current_height
 
 
     def change_sped(self, speed:int) -> int:
-        self.current_speed = speed
+        if speed > 0:
+            self.current_speed = speed
         return self.current_speed
 
 
@@ -102,3 +104,52 @@ print(plane1.takeoff())
 plane1.change_height(234)
 print(plane1)
 print(plane1.landing())
+
+
+# 4
+
+class MusicAlbum:
+    author: str
+    album: str
+    genre: str
+    list_track : list
+
+    def __init__(self, author: str, album_name: str, genre: str, list_track=None):
+        self.author = author
+        self.album = album_name
+        self.genre = genre
+        self.list_track = []
+
+
+    def __str__(self) -> str:
+        return (f"Исполнитель {self.author}, название альбома {self.album}, жанр {self.genre},"
+                f"список треков {self.list_track} ")
+
+
+    def add_track(self, track: str) -> None:
+        if track not in self.list_track:
+            self.list_track.append(track)
+
+
+    def del_track(self, track) -> None:
+        self.list_track.remove(track)
+
+
+    def play_track(self, track: str) -> str:
+        return f"Трек {track} воспроизведён."
+
+
+album1 = MusicAlbum('SnoopDog','Bang','Rap')
+print(album1)
+
+album1.add_track('yo')
+album1.add_track('gav')
+print(album1)
+album1.del_track('yo')
+print(album1)
+print(album1.play_track('gAV'))
+
+
+
+
+
