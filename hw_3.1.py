@@ -33,7 +33,7 @@ class Artifacts:
         self.power = power
 
 
-class Date_Ritual:
+class DateRitual:
     day: int
     month: int
     year: int
@@ -44,7 +44,7 @@ class Date_Ritual:
         self.year = year
 
 
-class Society_member:
+class SocietyMember:
     role: str
     clothes: str
     experience: int
@@ -62,12 +62,12 @@ class Society_member:
 
 # 3 -------------------------------------------------------------------------------------------
 
-class Urban_Fermers_Market:
+class UrbanFermersMarket:
 
     def __init__(self):
         pass
 
-class Fermers_shop:
+class FermersShop:
     name: str
     age: int
     products: list
@@ -87,7 +87,7 @@ class Product:
         self.availability_piece = availability_piece
 
 
-class Date_Manufacture_Product:
+class DateManufactureProduct:
     day: int
     month: int
     year: int
