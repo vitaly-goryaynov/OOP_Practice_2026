@@ -52,3 +52,53 @@ book1 = Book('Кошки', "Куклачёв", 76)
 print(book1)
 print(book1.open_pages(77))
 print(book1.open_pages(27))
+
+
+# 3
+
+class PassengerPlane:
+    maker: str
+    model: str
+    passenger_capacity: int
+    current_height: int
+    current_speed: int
+
+    def __init__(self, maker:str, model:str, passenger_capacity:int, current_height:int, current_speed:int):
+        self.maker = maker
+        self.model = model
+        self.passenger_capacity = passenger_capacity
+        self.current_height = current_height
+        self.current_speed = current_speed
+
+
+    def __str__(self):
+        return (f'Производитель самолёта {self.maker}, модель {self.model}, вместимость пассажиров {self.passenger_capacity}, '
+                f'\nтекущая высота {self.current_height}, текущая скорость {self.current_speed}')
+
+
+    def takeoff(self):
+        return f'Самолёт взлетел!'
+
+
+    def landing(self):
+        return f'Самолёт приземлился!'
+
+
+    def change_height(self, height:int) -> int:
+        self.current_height = height
+        return self.current_height
+
+
+    def change_sped(self, speed:int) -> int:
+        self.current_speed = speed
+        return self.current_speed
+
+
+plane1 = PassengerPlane("Россия", "Ту - 777", 333, 0, 0)
+
+print(plane1)
+plane1.change_sped(400)
+print(plane1.takeoff())
+plane1.change_height(234)
+print(plane1)
+print(plane1.landing())
